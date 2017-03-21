@@ -1,17 +1,20 @@
 LoE Private Server
 ===================================
 
-**This project is unmaintened and will not work on recent versions of the game**. 
-This is an open source Private Server, to play even when the official servers are closed. 
+**This project isn't maintained by the original author, but it was picked up by GeekBrony to see if he can help**.
+
+**Please note that this will NOT work on new LoE versions unless we figure out how the new versions work**.
+
+This is an open source Private Server, to play even when the official servers are closed.
 The official release is for Windows (x86 and x64). The server should work on Linux and Mac too, but you'll need to compile it yourself.<br/>
-<h5><b><a href="https://github.com/tux3/LoE-PrivateServer/releases">Downloads</a></b></h5>
+<h5><b><a href="https://github.com/GeekBrony/LoE-PrivateServer/releases">Downloads</a></b></h5>
 
 <h3>How to compile</h3>
-- Download <a href="https://qt-project.org/downloads">Qt 5.2.0 or later</a>
-- Download the <a href="https://github.com/tux3/LoE-PrivateServer/archive/master.zip">latest Private Server source snapshot</a>
+- Download `Qt 5.2.0` or later
+- Download the <a href="https://github.com/GeekBrony/LoE-PrivateServer/archive/master.zip">latest Private Server source snapshot</a>
 - Extract zip archive with source snapshot into any desired directory
-- Open src\LoE_PrivateServer.pro in Qt
-- Press Ctrl+B (or Build button) to compile the project
+- Open `src\LoE_PrivateServer.pro` in Qt
+- Press `Ctrl+B (or Build button)` to compile the project
 
 <h4>How to compile a console version</h4>
 - Open src\LoE_PrivateServer.pro in Qt
@@ -23,7 +26,7 @@ The official release is for Windows (x86 and x64). The server should work on Lin
 - Press Ctrl+B (or Build button) to compile the project
 
 <h3>How to use</h3>
-Extract in the LoE game folder, start PrivateServer.exe and the game. 
+Extract in the LoE game folder, start PrivateServer.exe and the game.
 In the game pick a name/password (no need to register first)
 Then use either :
 - the Local server, for singleplayer or a multiplayer LAN in your house
@@ -37,8 +40,12 @@ Some important features are still lacking at the moment :
 - Not as many quests as the official servers.
 - No 'natural' items to collect (flowers, gems, ...)
 
+<h3>Known issues:</h3>
+- Positions of players will not sync properly as of the August 2014 release. actions/emotes work though... <a href="https://github.com/GeekBrony/LoE-PrivateServer/blob/master/src/sync.cpp">Help is appreciated</a>.
+- No compatibility with the latest version of LoE - only supported up to August 2014 release.
+
 <h3>Online private servers</h3>
-The servers are run by independant volunteers. <br/>Anyone can start a private server, and they are not all running the same version or following the same rules. <br/>By default there is no chat filtering or moderation, the cutie marks are the ones of the official servers, and the quests/npcs are the ones on this repository.<br/>But server owners are free to change this as they wish, and their servers might not always be 'safe for work'.
+The servers are run by independent volunteers. <br/>Anyone can start a private server, and they are not all running the same version or following the same rules. <br/>By default there is no chat filtering or moderation, the cutie marks are the ones of the official servers, and the quests/npcs are the ones on this repository.<br/>But server owners are free to change this as they wish, and their servers might not always be 'safe for work'.
 You can find more informations on how to create/edit quests in the file QuestScript.txt.
 
 <h3>Chat commands</h3>
@@ -52,7 +59,7 @@ You can find more informations on how to create/edit quests in the file QuestScr
 - :tp location : Teleports your pony to this location (scene)
 
 <h3>Server commands</h3>
-You don't need any of those commands to play, but they might be usefull.
+You don't need any of those commands to play, but they might be useful.
 setPeer is used to select a client. Most commands will only act on the selected client.
 For example if you're stuck, do setPeer with your IP and port, then do for example "load Cottage".
 - start/stop login : Starts and stops the login server
@@ -68,8 +75,8 @@ For example if you're stuck, do setPeer with your IP and port, then do for examp
 - getPos : Get the position (x, y, z) of the player. Often used with "move x y z".
 - getRot : Get the rotation (x, y, z, w) of the player.
 - move \<x\> \<y\> \<z\> : Instantly teleport the player to the given position. Not a spell. You just move.
-- setStat \<statId\> \<value\> : Set the given stat (health, mana, ..) to the given value. 
-- setMaxStat \<statId\> \<value\> : Set the max of the given stat (health, mana, ..) to the given value. 
+- setStat \<statId\> \<value\> : Set the given stat (health, mana, ..) to the given value.
+- setMaxStat \<statId\> \<value\> : Set the max of the given stat (health, mana, ..) to the given value.
 - error \<message\> : Sends a message-box-scroll-thingy to the player with the title "Error" and the given message. Doesn't disconnect.
 
 <br/>The following commands are for debugging only. You really don't need them, and most of the time you don't want to use them.
