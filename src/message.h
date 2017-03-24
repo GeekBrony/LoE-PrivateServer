@@ -12,27 +12,49 @@ enum NetviewRemoveReasonCodes {
     NetviewRemoveReasonKill = 1
 };
 
+/* Aug2014 MessageTypes
+ *
+ * MsgUnconnected = 0, MsgUserUnreliable = 1, MsgPing = 0x81, MsgPong = 0x82, MsgConnect = 0x83,
+ * MsgConnectResponse = 0x84, MsgConnectionEstablished = 0x85, MsgAcknowledge = 0x86,
+ * MsgDisconnect = 0x87, MsgUserReliableOrdered1 = 0x43, MsgUserReliableOrdered2 = 0x44,
+ * MsgUserReliableOrdered3 = 0x45, MsgUserReliableOrdered4 = 0x46, MsgUserReliableOrdered5 = 0x47,
+ * MsgUserReliableOrdered6 = 0x48, MsgUserReliableOrdered11 = 0x4d, MsgUserReliableOrdered12 = 0x4e,
+ * MsgUserReliableOrdered18 = 0x54, MsgUserReliableOrdered20 = 0x56, MsgUserReliableOrdered32 = 0x62
+*/
+
+/* Jul2016 MessageTypes
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+*/
+
+
+/* The comments below dictate the purpose of the UDP messages sent */
 enum MessageTypes {
-    MsgUnconnected = 0,
-    MsgUserUnreliable = 1,
-    MsgPing = 0x81,
-    MsgPong = 0x82,
-    MsgConnect = 0x83,
-    MsgConnectResponse = 0x84,
-    MsgConnectionEstablished = 0x85,
-    MsgAcknowledge = 0x86,
-    MsgDisconnect = 0x87,
-    MsgUserReliableOrdered1 = 0x43,
-    MsgUserReliableOrdered2 = 0x44,
-    MsgUserReliableOrdered3 = 0x45,
-    MsgUserReliableOrdered4 = 0x46,
-    MsgUserReliableOrdered5 = 0x47,
-    MsgUserReliableOrdered6 = 0x48,
-    MsgUserReliableOrdered11 = 0x4d,
-    MsgUserReliableOrdered12 = 0x4e,
-    MsgUserReliableOrdered18 = 0x54,
-    MsgUserReliableOrdered20 = 0x56,
-    MsgUserReliableOrdered32 = 0x62
+    MsgUnconnected = 0,                 // ___0 = Unconnected (Unused?)
+    MsgUserUnreliable = 1,              // ___1 = Syncing Players
+    MsgPing = 0x81,                     // 0x81 = LOE PING
+    MsgPong = 0x82,                     // 0x82 = LOE PONG
+    MsgConnect = 0x83,                  // 0x83 = CONNECT
+    MsgConnectResponse = 0x84,          // 0x84 = CONNECT RESPONSE
+    MsgConnectionEstablished = 0x85,    // 0x85 = ACK Connection Established
+    MsgAcknowledge = 0x86,              // 0x86 = Acknowledge
+    MsgDisconnect = 0x87,               // 0x87 = Disconnect Dialog Message
+    MsgUserReliableOrdered1 = 0x43,     //
+    MsgUserReliableOrdered2 = 0x44,     //
+    MsgUserReliableOrdered3 = 0x45,     // 0x45 = Chat Messages / Friends
+    MsgUserReliableOrdered4 = 0x46,     // 0x46 = Dialog Messages
+    MsgUserReliableOrdered5 = 0x47,     //
+    MsgUserReliableOrdered6 = 0x48,     // 0x48 = Netview (Mobs / NPCs)
+    MsgUserReliableOrdered11 = 0x4d,    //
+    MsgUserReliableOrdered12 = 0x4e,    // 0x4e = Animations
+    MsgUserReliableOrdered18 = 0x54,    // 0x54 = Stats / Item Messages
+    MsgUserReliableOrdered20 = 0x56,    //
+    MsgUserReliableOrdered32 = 0x62     //
 };
 
 enum ChatType
